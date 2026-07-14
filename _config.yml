@@ -858,9 +858,6 @@ search:
   tags:
     # - Solitude
     # - Hexo
-  ai:
-    enable: false
-    url:
   # Algolia
   algolia:
     # hits:
