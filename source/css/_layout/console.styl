@@ -73,6 +73,9 @@ if $console-style != 'classic'
       transform translateY(20px)
       transition .3s
 
+      &:empty
+        display none
+
       +maxWidth768()
         display none
 
@@ -91,6 +94,7 @@ if $console-style != 'classic'
       height 100%
       flex-direction column
       justify-content center
+      min-height 0
 
       +maxWidth900()
         width 100%
@@ -105,7 +109,8 @@ if $console-style != 'classic'
       box-shadow var(--efu-shadow-glass)
 
     .console-card.tags
-      height calc(100% - 163px)
+      flex 1
+      min-height 0
 
       &:only-child
         height 100%
@@ -117,6 +122,7 @@ if $console-style != 'classic'
         display flex
         flex-wrap wrap
         align-content flex-start
+        min-height 0
         gap 8px
         overflow-y auto
         scrollbar-width none
@@ -224,6 +230,7 @@ if $console-style != 'classic'
 
     .console-card.history
       height 154px
+      flex-shrink 0
       margin-top 8px
       padding 0
       background transparent
@@ -242,7 +249,8 @@ if $console-style != 'classic'
         height 154px
         flex-direction row
         flex-wrap wrap
-        align-content space-between
+        align-content flex-start
+        overflow-y auto
         gap 8px
 
         li.item
