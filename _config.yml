@@ -68,7 +68,15 @@ nav:
 # 首页顶部
 hometop:
   enable: false
-  # 首页顶部样式: center(封面轮播 + 右侧列表) / classic(大字标语 + 技术图标 + 推荐卡片)
+  # 全局版式开关：classic(3.x 旧版外观) / center(4.0 新版外观)
+  # 该开关统一控制以下 7 处样式，排查时对照 *_classic 文件即可：
+  #   1. 首页顶部            hometop-classic.pug / home-top-classic.styl（含 #home_top 宽度、首页主栏结构）
+  #   2. 分类栏              categoryBar-classic.pug / category-bar-classic.styl（首页、归档页、分类页）
+  #   3. 导航栏(含分组下拉)  header-classic.styl
+  #   4. 中控台(含关闭按钮)  console-classic.styl + console.pug
+  #   5. 文章详情头部封面    postMeta.pug + meta.styl（classic 为背景图，center 为右侧卡片）
+  #   6. 分页组件            pagination-classic.styl
+  #   7. 关于页打赏          award-classic.pug + reward-classic.styl
   style: center
   banner:
     title: 分享技术<br >与科技生活 # 大字
