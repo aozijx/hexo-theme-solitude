@@ -405,3 +405,19 @@
 
     +minWidth768()
       min-height 250px
+
+//- classic 样式：封面作为文章头部背景，不显示右侧封面卡片
+$post-style = hexo-config('hometop.style') || 'center'
+
+if $post-style == 'classic'
+  .post
+    .post-cover-aside
+      display none
+
+    #post-info
+      #post-firstinfo,
+      .post-title,
+      #post-meta
+        width 100%
+        margin-left 0
+
