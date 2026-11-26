@@ -1,6 +1,18 @@
+//- 首页顶部样式：classic(大字标语) / center(封面轮播+列表)
+$home-style = hexo-config('hometop.style') || 'center'
+
 if hexo-config('hometop.enable') || hexo-config('brevity.enable')
   #home_top
     width 100%
+
+    if $home-style == 'classic'
+      max-width 1400px
+      margin 0 auto
+      padding .5rem 1.5rem
+
+      +maxWidth768()
+        padding 0 1rem
+        margin-top 0
 
 .layout#content-inner.layout--home
   flex-direction column
@@ -34,7 +46,10 @@ if hexo-config('hometop.enable') || hexo-config('brevity.enable')
     gap .5rem
 
 if hexo-config('hometop.enable')
-  @import "home-top.styl"
+  if $home-style == 'classic'
+    @import "home-top-classic.styl"
+  else
+    @import "home-top.styl"
 
 if hexo-config('carousel')
   @import "carousel.styl"

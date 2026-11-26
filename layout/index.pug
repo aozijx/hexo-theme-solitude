@@ -13,7 +13,10 @@ mixin homeTop()
       if theme.brevity.home_mini && theme.brevity.enable
         include ./includes/widgets/home/bbTimeList
       if theme.hometop.enable && is_home_first_page()
-        include ./includes/widgets/home/hometop
+        if theme.hometop.style === 'classic'
+          include ./includes/widgets/home/hometop-classic
+        else
+          include ./includes/widgets/home/hometop
 
 //- 分类栏组件
 mixin categoryBar()
@@ -34,15 +37,24 @@ mixin postsList()
 
 //- 首页主内容组件
 mixin homeContent()
-  main.layout.layout--home#content-inner
-    .home-category-bar.category-in-bar
-      +categoryBar()
-    .home-layout-row
+  if theme.hometop.style === 'classic'
+    main.layout#content-inner
       #home
+        +categoryBar()
         +postsList()
 
       //- 侧边栏
       include ./includes/widgets/aside/aside
+  else
+    main.layout.layout--home#content-inner
+      .home-category-bar.category-in-bar
+        +categoryBar()
+      .home-layout-row
+        #home
+          +postsList()
+
+        //- 侧边栏
+        include ./includes/widgets/aside/aside
 
 block content
   +homeTop()

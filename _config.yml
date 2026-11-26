@@ -68,6 +68,8 @@ nav:
 # 首页顶部
 hometop:
   enable: false
+  # 首页顶部样式: center(封面轮播 + 右侧列表) / classic(大字标语 + 技术图标 + 推荐卡片)
+  style: center
   banner:
     title: 分享技术<br >与科技生活 # 大字
     desc:

@@ -1,0 +1,9 @@
+//- 经典首页顶部：大字标语 + 技术图标 + 推荐卡片
+.recent-top-post-group#recent-top-post-group
+    .recent-post-top#recent-post-top
+        #bannerGroup
+            #banners
+                include ./banner.pug
+        if theme.hometop.recommendList.enable
+            .topGroup
+                include ./topGroup.pug
