@@ -6,7 +6,7 @@
             case 'local':
                 localSearch = JSON.stringify({
                     preload: theme.search.local.preload,
-                    path: theme?.search?.local?.CDN || '/search.xml'
+                    path: url_for(theme?.search?.local?.CDN || '/search.xml')
                 });
                 break;
             case 'algolia':
