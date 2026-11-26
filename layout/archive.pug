@@ -24,9 +24,13 @@ block content
         const initialArchivePage = Math.max(Number(page.current) || 1, 1)
 
       main.layout.layout--archive#content-inner
-        .home-category-bar.category-in-bar
+        if theme.hometop.style === 'classic'
           #category-bar
-            include ./includes/widgets/home/categoryBar
+            include ./includes/widgets/home/categoryBar-classic
+        else
+          .home-category-bar.category-in-bar
+            #category-bar
+              include ./includes/widgets/home/categoryBar
 
         .archive-layout-row
           #page

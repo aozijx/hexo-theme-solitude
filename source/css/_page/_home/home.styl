@@ -57,7 +57,10 @@ if hexo-config('hometop.enable')
 if hexo-config('carousel')
   @import "carousel.styl"
 
-@import "category-bar.styl"
+if $home-style == 'classic'
+  @import "category-bar-classic.styl"
+else
+  @import "category-bar.styl"
 
 if hexo-config('aside.position') == 0
   #home

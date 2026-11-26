@@ -21,7 +21,10 @@ mixin homeTop()
 //- 分类栏组件
 mixin categoryBar()
   #category-bar
-    include ./includes/widgets/home/categoryBar
+    if theme.hometop.style === 'classic'
+      include ./includes/widgets/home/categoryBar-classic
+    else
+      include ./includes/widgets/home/categoryBar
 
 //- 文章列表组件
 mixin postsList()
