@@ -21,7 +21,7 @@ if site.data.about.rewardList && site.data.about.award.enable
                             time.datetime.reward-list-item-time(datetime=moment(reward.time).format())
                 if theme.post.award.enable
                     .post-reward
-                        .post-reward(onclick="AddRewardMask()")
+                        .post-reward(data-solitude-action='showReward')
                         .reward-button(title=_p('award.tipping'))
                             i.solitude.fas.fa-heart
                             = _p('award.tipping')

@@ -11,7 +11,7 @@ div.category-bar-right
     - let categories = site.categories.find({parent: {$exists: false}})
     - let word_count = categories.map(category => category.name).join('').length
     if word_count > 40 || categories.data.length > 10
-        .category-bar-next#category-bar-next(onclick="sco.scrollCategoryBarToRight()")
+        .category-bar-next#category-bar-next(data-solitude-action="scrollCategoryBarToRight")
             i.solitude.fas.fa-angles-right
     if theme.page.categories
         a.category-bar-more(href=url_for('/categories/'))= __('more')
