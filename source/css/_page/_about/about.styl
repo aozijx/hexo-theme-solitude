@@ -63,4 +63,8 @@ if "tj" in $about
   @import "statistic"
 
 if "award" in $about
-  @import "reward"
+  $about-style = hexo-config('hometop.style') || 'center'
+  if $about-style == 'classic'
+    @import "reward-classic"
+  else
+    @import "reward"
