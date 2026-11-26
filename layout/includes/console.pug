@@ -4,6 +4,9 @@
 - const { use } = theme.comment
 
 div#console
+    if theme.hometop.style === 'classic'
+        div.close-btn(onclick="sco.hideConsole()")
+            i.solitude.fas.fa-xmark
     div.console-content
         div.console-card-group(onclick="sco.onConsoleCardGroupClick(event)")
             if use && recentComment.enable
